@@ -1,0 +1,13 @@
+# Exclude large model files
+models/**/*.json
+models/model_z*
+
+# Exclude compiled files and IDE configs
+__pycache__/
+.vscode/
+*.exe
+*.log
+*.sum
+*.txt
+!requirements.txt
+!README.md
