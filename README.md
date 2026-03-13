@@ -1,16 +1,20 @@
-# Fast Near-Road Pollutant Dispersion Modeling: A Physics-Structured AERMOD-RLINE Surrogate
+# PS-XGB-RLINE: A Physics-Structured AERMOD-RLINE Surrogate for Fast Near-Road Dispersion Modeling
 
-A fast XGBoost surrogate that replaces AERMOD-RLINE batch runs for road-traffic pollutant dispersion modelling over real road networks with time-varying emissions and meteorology.
+A physics-structured XGBoost surrogate model that replaces heavy AERMOD-RLINE numerical integrations with a fast "line source decomposition" strategy for high-resolution traffic-related pollution simulations.
 
 ---
 
 ## Overview
 
-Traditional Gaussian dispersion models (AERMOD-RLINE) are accurate but slow—running a full year of hourly simulations for a dense road network can take days. This project trains an XGBoost surrogate on pre-computed AERMOD unit-line-source output, then uses it to infer concentrations at thousands of receptor points in seconds per hour.
+High-resolution dispersion modeling is essential for capturing near-road air pollution gradients, but the regulatory AERMOD-RLINE system is computationally expensive for regional-scale applications. **PS-XGB-RLINE** addresses this bottleneck by integrating a physics-based partitioning framework with an XGBoost surrogate. 
+
+
+### Pollutant Applicability
+While the provided examples focus on **NOx**, the surrogate model learns pure physical dispersion relationships without explicitly representing atmospheric chemical reactions. Therefore, the pre-trained framework can be directly applied to any pollutant whose near-road concentrations are primarily governed by dispersion processes, such as **particulate matter (PM)**, **carbon dioxide (CO₂)**, and **nitrogen oxides (NOx)**, by simply adjusting the emission inputs.
 
 **Key features**
 
-- Wind-direction-aware coordinate rotation (no wind-direction binning)
+- Wind-direction-aware coordinate rotation
 - Road-orientation-relative wind encoding per source segment
 - Separate models for downwind (x ≥ 0) and upwind (x < 0) regions
 - Six atmospheric stability classes (VS / S / N1 / N2 / U / VU)
