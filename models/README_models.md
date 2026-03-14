@@ -1,10 +1,6 @@
 # Pre-trained Models
 
-The trained XGBoost model files (`.json`) are **not included** in this repository because they exceed GitHub's 100 MB per-file limit (~48 MB × 12 files).
-
-## Download
-
-Download all model files from the **[Releases page](../../releases)** of this repository.
+The trained XGBoost model files (`.json`) are included in this repository.
 
 Alternatively, you can re-train the models from scratch using `training.py` after generating the AERMOD training data with `data_gen.py`.
 

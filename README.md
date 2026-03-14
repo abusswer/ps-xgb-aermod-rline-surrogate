@@ -44,10 +44,9 @@ While the provided examples focus on **NOx**, the surrogate model learns pure ph
 pip install -r requirements.txt
 ```
 
-### 2. Download pre-trained models
+### 2. Pre-trained models
 
-Pre-trained models (~48 MB per file, 12 files total) are too large for GitHub.  
-Download from the **[Releases page](../../releases)** and place all `.json` files into the `models/` directory.
+The pre-trained XGBoost models are included in the `models/` directory. 
 
 Expected files:
 ```
