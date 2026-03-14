@@ -10,6 +10,8 @@ Alternatively, you can re-train the models from scratch using `training.py` afte
 
 ## Expected Files
 
+*Note: The following example uses models trained with surface roughness length **z₀ = 0.5 m (denoted as M)**.*
+
 Place all downloaded `.json` files directly in this `models/` directory:
 
 | File | Description |
@@ -33,8 +35,8 @@ Place all downloaded `.json` files directly in this `models/` directory:
 |-------|----------------------|-------------|
 | VS    | 0 < L ≤ 200          | Very stable |
 | S     | 200 < L < 1000       | Stable      |
-| N1    | L ≥ 1000             | Neutral (mechanical) |
-| N2    | L ≤ −1000            | Neutral (convective onset) |
+| N1    | L ≥ 1000             | Neutral type-1 |
+| N2    | L ≤ −1000            | Neutral type-2 |
 | U     | −1000 < L ≤ −200     | Unstable    |
 | VU    | −200 < L < 0         | Very unstable |
 
